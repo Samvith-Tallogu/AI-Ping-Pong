@@ -1,0 +1,20 @@
+body
+{
+background: url('tt.gif');
+background-size: cover;
+}
+
+.heading{
+    background-color:cornflowerblue;
+    padding: 10px;
+    margin-top: 10px;
+    text-align: center;
+    width: 70%;
+    height: 55px;
+    border-radius: 20px;
+    margin-left: 200px;
+}
+#instructions{
+    float: right;
+    border: 2px white solid;
+}
