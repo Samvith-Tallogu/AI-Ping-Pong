@@ -5,16 +5,30 @@ background-size: cover;
 }
 
 .heading{
-    background-color:cornflowerblue;
+    margin-top: 0px;
     padding: 10px;
-    margin-top: 10px;
     text-align: center;
-    width: 70%;
-    height: 55px;
+    width: 100%;
     border-radius: 20px;
-    margin-left: 200px;
+    font-size: 23px !important;
+}
+
+.heading #instructions{
+    border-radius: 12px;
 }
 #instructions{
     float: right;
     border: 2px white solid;
+}
+
+#start{
+    margin-top: 0px;
+}
+
+.btn-danger .btn-primary{
+    margin-left: 10px;
+}
+
+.btn-danger{
+    margin-left: 120px;
 }
