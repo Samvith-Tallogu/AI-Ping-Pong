@@ -32,3 +32,8 @@ background-size: cover;
 .btn-danger{
     margin-left: 120px;
 }
+
+canvas{
+    margin-left: 300px;
+    margin-top: 40px;
+}
