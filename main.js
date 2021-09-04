@@ -1,5 +1,6 @@
 rightWristX = "";
 rightWristY = "";
+scorerightWrist = "";
 
 function preload(){
   over = loadSound('over.wav');
@@ -44,7 +45,7 @@ function gotPoses(results) {
     console.log(results);
     rightWristX = results[0].pose.rightWrist.x;
     rightWristY = results[0].pose.rightWrist.y;
-    scorerightWrist = results[0].pose.keypoints[10].score;
+    scorerightWrist = results[0].pose.keypoints[0].score;
     console.log("Right Wrist X: " + floor(rightWristX) + "    Right Wrist Y: " + floor(rightWristY));
   }
 }
@@ -60,6 +61,13 @@ function draw() {
   fill("black");
   stroke("black");
   rect(0, 0, 20, 700);
+
+  if(scorerightWrist > 0.2)
+  {
+    fill("#FF0000");
+    stroke("#FFFF");
+    circle(rightWristX, rightWristY, 20);
+  }
 
   //funtion paddleInCanvas call 
   paddleInCanvas();
