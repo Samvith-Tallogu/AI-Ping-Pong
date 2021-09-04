@@ -1,3 +1,5 @@
+rightWristX = "";
+rightWristY = "";
 
 function preload(){
   over = loadSound('over.wav');
@@ -29,13 +31,27 @@ function setup() {
   video = createCapture(VIDEO);
   video.size(700, 600);
   video.hide();
+  poseNet = ml5.poseNet(video, modelLoaded);
+  poseNet.on('pose', gotPoses);
 }
 
+function modelLoaded(){
+  console.log('Pose Net Loaded Successfully!');
+}
+
+function gotPoses(results) {
+  if(results.length > 0){
+    console.log(results);
+    rightWristX = results[0].pose.rightWrist.x;
+    rightWristY = results[0].pose.rightWrist.y;
+    scorerightWrist = results[0].pose.keypoints[10].score;
+    console.log("Right Wrist X: " + floor(rightWristX) + "    Right Wrist Y: " + floor(rightWristY));
+  }
+}
 
 function draw() {
-
   background(0);
-  image(video, 0, 0, 700, 600);
+  image(video, 0, 25, 700, 550);
 
   fill("black");
   stroke("black");
